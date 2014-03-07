@@ -5,7 +5,7 @@ A python JSON-RPC client for the Metaname API
 
 Documentation for the Metaname API is at: https://metaname.net/api/1.1/doc
 
-Usage::
+Usage:
 
     >>> client = Client("account_reference", "api_key")
     >>> client.domain_names()
@@ -17,3 +17,6 @@ Usage::
                 "ttl":86400,
                 "data":"93.184.216.119"})
 
+License:
+
+See LICENSE.
