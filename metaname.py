@@ -2,7 +2,7 @@ import functools
 import json
 import requests
 
-ENDPOINT = 'https://test.metaname.net/api/1.1'
+ENDPOINT = 'https://metaname.net/api/1.1'
 HEADERS = {'content-type': 'application/json'}
 
 class Client(object):
