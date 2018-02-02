@@ -2,12 +2,12 @@ import functools
 import json
 import requests
 
-ENDPOINT = 'https://metaname.net/api/1.1'
 HEADERS = {'content-type': 'application/json'}
 
 class Client(object):
     """JSON-RPC client for using the metaname api"""
-    def __init__(self, account_reference, api_key):
+    def __init__(self, endpoint, account_reference, api_key):
+        self.endpoint = endpoint
         self.account_reference = account_reference
         self.api_key = api_key
         self.request_id = 0
@@ -20,7 +20,7 @@ class Client(object):
         payload = self._construct_payload(method, *args)
 
         try:
-            response = requests.post(ENDPOINT, data=payload,
+            response = requests.post(self.endpoint, data=payload,
                 headers=HEADERS, verify=True)
         except requests.exceptions.RequestException as ex:
             print(ex)
